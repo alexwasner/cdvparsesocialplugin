@@ -14,7 +14,6 @@ import org.apache.cordova.CordovaPlugin;
 
 import com.parse.LogInCallback;
 import com.parse.Parse;
-import com.parse.ParseAnalytics;
 import com.parse.ParseException;
 import com.parse.ParseTwitterUtils;
 import com.parse.ParseUser;

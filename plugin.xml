@@ -13,7 +13,7 @@
     <platform name="android">
         <config-file target="config.xml" parent="/*">
             <feature name="ParseTwitter">
-                <param name="android-package" value="com.alexwasner.parsetwitter" />
+                <param name="android-package" value="com.alexwasner.parsetwitter.ParseTwitter" />
             </feature>
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/*">
