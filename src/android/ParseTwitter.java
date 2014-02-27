@@ -17,6 +17,7 @@ import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseTwitterUtils;
 import com.parse.ParseUser;
+import com.google.gson.Gson;
 
 import android.content.Context;
 import android.util.Log;
@@ -72,7 +73,9 @@ public class ParseTwitter extends CordovaPlugin {
             } else {
               Log.d("VapeSlate", "User logged in through Twitter.");
             }
-            callbackContext.success();
+            Gson gson = new Gson();
+            String json = gson.toJson(user); 
+            callbackContext.success(json);
         }
       });
           }

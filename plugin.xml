@@ -21,6 +21,7 @@
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         </config-file>
         <source-file src="src/android/parse/Parse-1.4.1.jar" target-dir="libs" framework="true" />
+        <source-file src="src/android/gson/gson-2.2.4.jar" target-dir="libs" framework="true" />
         <source-file src="src/android/ParseTwitter.java" target-dir="src/com/alexwasner/parsetwitter" />
     </platform>
 </plugin>
