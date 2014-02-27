@@ -2,7 +2,7 @@
 
 Cordova Plugin to bridge the android twitter authentication via Parse API. Developed for Apache Cordova CLI >= 3.0.0. 
 
-## Step 1: install
+## Install
 
 ```
 cordova plugin add https://github.com/alexwasner/cdv-parsetwitter.git
