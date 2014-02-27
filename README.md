@@ -2,6 +2,10 @@
 
 Cordova Plugin to bridge the android twitter authentication via Parse API. Developed for Apache Cordova CLI >= 3.0.0. 
 
+This plugin uses [GSON](https://code.google.com/p/google-gson/) from Google and [Parse's](http://www.parse.com) [Android API](https://parse.com/apps/quickstart#social/mobile/android/native/existing) and [Twitter Utils](https://parse.com/docs/android/api/com/parse/ParseTwitterUtils.html).
+I have already included and referenced these files, but be sure to check out their documentation for further expansion of this plugin.
+
+
 ## Install
 
 ```
@@ -17,7 +21,7 @@ var promise = new Promise();
 if(window.parsetwitter){
   window.parsetwitter.init(PARSE_API_ID,PARSE_API_KEY,function(){
     window.parsetwitter.login(function(user){
-      var newUser = JSON.parse(user);
+      var newUser = JSON.parse(user); 
       console.log(newUser.sessionToken);
       console.log(newUser.isNew);
       console.log(newUser.authData.nameValuePairs.twitter.nameValuePairs.screen_name);
