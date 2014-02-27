@@ -1,4 +1,4 @@
-## Parse-Twitter Plugin for Apache Cordova
+## Parse.com Twitter Bridge Plugin for Apache Cordova
 
 Cordova Plugin to bridge the android twitter authentication via Parse API. Developed for Apache Cordova CLI >= 3.0.0. 
 
@@ -10,13 +10,14 @@ cordova plugin add https://github.com/alexwasner/cdv-parsetwitter.git
 
 ## Make call from JavaScript
 
+In this example, you will need to replace PARSE_API_ID and PARSE_API_KEY with your consumer id and key from Parse.com
+
 ```
 var promise = new Promise();
 if(window.parsetwitter){
   window.parsetwitter.init(PARSE_API_ID,PARSE_API_KEY,function(){
     window.parsetwitter.login(function(user){
       var newUser = JSON.parse(user);
-      console.log(user);
       console.log(newUser.sessionToken);
       console.log(newUser.isNew);
       console.log(newUser.authData.nameValuePairs.twitter.nameValuePairs.screen_name);
