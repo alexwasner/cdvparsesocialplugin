@@ -10,11 +10,11 @@ ParseSocialPlugin.prototype.init = function(appId, clientKey, success, error) {
 };
 
 ParseSocialPlugin.prototype.loginTwitter = function(success, error) {
-  cordova.exec(success, error, 'ParseSocialPlugin', 'login', []);
+  cordova.exec(success, error, 'ParseSocialPlugin', 'loginTwitter', []);
 };
 
 ParseSocialPlugin.prototype.loginFacebook = function(success, error) {
-  cordova.exec(success, error, 'ParseSocialPlugin', 'login', []);
+  cordova.exec(success, error, 'ParseSocialPlugin', 'loginFacebook', []);
 };
 
 
