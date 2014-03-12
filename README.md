@@ -9,7 +9,7 @@ I have already included and referenced these files, but be sure to check out the
 ## Install
 
 ```
-cordova plugin add https://github.com/alexwasner/cdv-parsetwitter.git
+cordova plugin add https://github.com/alexwasner/cdvparsesocialplugin.git
 ```
 
 Add your Twitter and Facebook API Keys to the JAVA files.
