@@ -64,6 +64,7 @@ public class ParseSocialPlugin extends CordovaPlugin {
   }
 
   private void loginTwitter(final CallbackContext callbackContext, final JSONArray args) {
+    cordova.setActivityResultCallback(this);
     cordova.getActivity().runOnUiThread(new Runnable() {
     public void run() {
     String consumerKey = "Y0urTw1tt3rC0nsum3rK3y";
@@ -110,5 +111,12 @@ public class ParseSocialPlugin extends CordovaPlugin {
       }
     });
   }
+  
+  @Override
+  public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    ParseFacebookUtils.finishAuthentication(requestCode, resultCode, data);
+  }
+
   
 }
