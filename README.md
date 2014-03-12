@@ -20,14 +20,10 @@ In this example, you will need to replace PARSE_API_ID and PARSE_API_KEY with yo
 
 ```
 var promise = new Promise();
-if(window.parsetwitter){
-  window.parsetwitter.init(PARSE_API_ID,PARSE_API_KEY,function(){
-    window.parsetwitter.login(function(user){
-      var newUser = JSON.parse(user); 
-      console.log(newUser.sessionToken);
-      console.log(newUser.isNew);
-      console.log(newUser.authData.nameValuePairs.twitter.nameValuePairs.screen_name);
-      console.log(newUser.objectId);
+if(window.parsesocial){
+  window.parsesocial.init(PARSE_API_ID,PARSE_API_KEY,function(){
+    window.parsesocial.loginTwitter(function(user){
+      var newUser = JSON.parse(user);
       promise.resolve();
     }.bind(this),
     function(){
@@ -43,6 +39,10 @@ else{
 }
 return promise;
 ```
+###Functions
+window.parsesocial.init(ParseApiId, ParseApiKey, successCallback, errorCallback);
+window.parsesocial.loginTwitter(successCallback, errorCallback);
+window.parsesocial.loginFacebook(successCallback, errorCallback);
 
 ### JSON Sample data
 ```
