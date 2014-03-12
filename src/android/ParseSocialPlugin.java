@@ -65,52 +65,50 @@ public class ParseSocialPlugin extends CordovaPlugin {
 
   private void loginTwitter(final CallbackContext callbackContext, final JSONArray args) {
     cordova.getActivity().runOnUiThread(new Runnable() {
-          public void run() {
-        String consumerKey = "Y0urTw1tt3rC0nsum3rK3y";
-        String consumerSecret ="Y0urTw1tt3rC0nsum3r53cr3t";
-        ParseTwitterUtils.initialize(consumerKey,consumerSecret);
-        ParseTwitterUtils.logIn(cordova.getActivity(), new LogInCallback() {
-        @Override
-        public void done(ParseUser user, ParseException err) {
-            if (user == null) {
-              Log.d("AppName", "The user cancelled the Twitter login.");
-            } else if (user.isNew()) {
-              Log.d("AppName", "User signed up and logged in through Twitter.");
-            } else {
-              Log.d("AppName", "User logged in through Twitter.");
+    public void run() {
+    String consumerKey = "Y0urTw1tt3rC0nsum3rK3y";
+    String consumerSecret ="Y0urTw1tt3rC0nsum3r53cr3t";
+    ParseTwitterUtils.initialize(consumerKey,consumerSecret);
+    ParseTwitterUtils.logIn(cordova.getActivity(), new LogInCallback() {
+    @Override
+    public void done(ParseUser user, ParseException err) {
+        if (user == null) {
+          Log.d("AppName", "The user cancelled the Twitter login.");
+        } else if (user.isNew()) {
+          Log.d("AppName", "User signed up and logged in through Twitter.");
+        } else {
+          Log.d("AppName", "User logged in through Twitter.");
             }
             Gson gson = new Gson();
             String json = gson.toJson(user); 
             callbackContext.success(json);
         }
       });
-          }
-      });
+      }
+    });
   }
 
   private void loginFacebook(final CallbackContext callbackContext, final JSONArray args) {
     cordova.getActivity().runOnUiThread(new Runnable() {
-          public void run() {
-          ParseFacebookUtils.initialize("YOUR FACEBOOK APP ID");
-          ParseFacebookUtils.logIn(cordova.getActivity(), new LogInCallback() {
-          @Override
-          public void done(ParseUser user, ParseException err) {
-            if (user == null) {
-              Log.d("AppName", "Uh oh. The user cancelled the Facebook login.");
-            } else if (user.isNew()) {
-              Log.d("AppName", "User signed up and logged in through Facebook!");
-            } else {
-              Log.d("AppName", "User logged in through Facebook!");
+    public void run() {
+      ParseFacebookUtils.initialize("YOUR FACEBOOK APP ID");
+      ParseFacebookUtils.logIn(cordova.getActivity(), new LogInCallback() {
+      @Override
+      public void done(ParseUser user, ParseException err) {
+        if (user == null) {
+          Log.d("AppName", "Uh oh. The user cancelled the Facebook login.");
+        } else if (user.isNew()) {
+          Log.d("AppName", "User signed up and logged in through Facebook!");
+        } else {
+          Log.d("AppName", "User logged in through Facebook!");
             }
             Gson gson = new Gson();
             String json = gson.toJson(user); 
             callbackContext.success(json);
           }
         });
-        }
-      });
-          }
-      });
+      }
+    });
   }
   
 }
