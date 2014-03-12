@@ -1,8 +1,8 @@
-## Parse.com Twitter Bridge Plugin for Apache Cordova
+## Parse.com Social Plugin for Apache Cordova
 
-Cordova Plugin to bridge the android twitter authentication via Parse API. Developed for Apache Cordova CLI >= 3.0.0. 
+Cordova Plugin to bridge the android facebook and twitter authentication via Parse API. Developed for Apache Cordova CLI >= 3.0.0. 
 
-This plugin uses [GSON](https://code.google.com/p/google-gson/) from Google and [Parse's](http://www.parse.com) [Android API](https://parse.com/apps/quickstart#social/mobile/android/native/existing) and [Twitter Utils](https://parse.com/docs/android/api/com/parse/ParseTwitterUtils.html).
+This plugin uses [GSON](https://code.google.com/p/google-gson/) from Google and [Parse's](http://www.parse.com) [Android API](https://parse.com/apps/quickstart#social/mobile/android/native/existing), [Facebook Utils](https://parse.com/docs/android/api/com/parse/ParseFacebookUtils.html) and [Twitter Utils](https://parse.com/docs/android/api/com/parse/ParseTwitterUtils.html).
 I have already included and referenced these files, but be sure to check out their documentation for further expansion of this plugin.
 
 
@@ -11,6 +11,8 @@ I have already included and referenced these files, but be sure to check out the
 ```
 cordova plugin add https://github.com/alexwasner/cdv-parsetwitter.git
 ```
+
+Add your Twitter and Facebook API Keys to the JAVA files.
 
 ## Make call from JavaScript
 

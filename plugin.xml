@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.alexwasner.parsetwitter" version="0.1.0">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.alexwasner.parsesocialplugin" version="0.1.0">
     <name>Parse Twitter Plugin</name>
     <author>Alex Wasner</author>
-    <description>Cordova plugin to use Twitter auth via Parse API.</description>
+    <description>Cordova plugin to use Twitter and Facebook auth via Parse API.</description>
     <keywords>cordova, twitter, parse</keywords>
     <engines>
         <engine name="cordova" version=">=3.0" />
     </engines>
-    <js-module src="www/parsetwitter.js" name="ParseTwitter">
-        <clobbers target="window.parsetwitter" />
+    <js-module src="www/parsesocialplugin.js" name="ParseSocialPlugin">
+        <clobbers target="window.parsesocialplugin" />
     </js-module>
     <platform name="android">
         <config-file target="config.xml" parent="/*">
-            <feature name="ParseTwitter">
-                <param name="android-package" value="com.alexwasner.parsetwitter.ParseTwitter" />
+            <feature name="ParseSocialPlugin">
+                <param name="android-package" value="com.alexwasner.parsesocialplugin.ParseSocialPlugin" />
             </feature>
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/*">
@@ -22,7 +22,7 @@
         </config-file>
         <source-file src="src/android/parse/Parse-1.4.1.jar" target-dir="libs" framework="true" />
         <source-file src="src/android/gson/gson-2.2.4.jar" target-dir="libs" framework="true" />
-        <source-file src="src/android/ParseTwitter.java" target-dir="src/com/alexwasner/parsetwitter" />
+        <source-file src="src/android/ParseSocialPlugin.java" target-dir="src/com/alexwasner/parsesocialplugin" />
     </platform>
 </plugin>
 
